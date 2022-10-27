@@ -336,14 +336,15 @@ GO
 SELECT dvd_num, 
        data_locacao,
 	   data_devolucao,
-	   DATEDIFF(DAY, data_locacao, data_devolucao) AS dias_alugado
+	   DATEDIFF(DAY, data_locacao, data_devolucao) AS dias_alugado,
+	   valor
 
 FROM locacao
 WHERE cliente_num_cadastro IN
  
 (SELECT num_cadastro 
 FROM cliente
-WHERE nome LIKE 'ROSA%')
+WHERE nome LIKE 'Rosa%')
 GO
 
 
